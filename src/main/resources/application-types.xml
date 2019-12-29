@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="sample" format="json">
+      <types:shape format="weave" example="input.json"><![CDATA[%dw 2.0
+
+type sample = {|
+  Hyderabad: {|
+    population: String, 
+    State: String, 
+    Level: String, 
+    IndexPoints: Number {"typeId": "int"}
+  |}, 
+  Bhubaneswar: {|
+    population: String, 
+    State: String, 
+    Level: String, 
+    IndexPoints: Number {"typeId": "int"}
+  |}
+|} {"example": "{\"Hyderabad\":{\"population\":\"9 Millions\",\"State\":\"Telangana\",\"Level\":\"1\",\"IndexPoints\":8},\"Bhubaneswar\":{\"population\":\"3 Millions\",\"State\":\"Orissa\",\"Level\":\"2\",\"IndexPoints\":5}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#3ec40e85-b773-4175-9ca4-59b3758dba54">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="sample"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="sample"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

@@ -1,0 +1,15 @@
+{
+	"Hyderabad":{
+		"population":"9 Millions",
+		"State":"Telangana",
+		"Level":"1",
+		"IndexPoints": 8
+	},
+	
+	"Bhubaneswar":{
+		"population":"3 Millions",
+		"State":"Orissa",
+		"Level":"2",
+		"IndexPoints": 5
+	}
+}
